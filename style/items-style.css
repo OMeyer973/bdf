@@ -1,0 +1,109 @@
+/*skribbl-io*/
+#skribbl-io .item-title {
+  background: url('https://skribbl.io/res/logo.gif');
+  background-size: auto 150%;
+  background-position: -10px 50%;
+  background-repeat: no-repeat;
+  color:rgba(0, 0, 0, 0);
+}
+
+
+#skribbl-io .item-row {
+  background-image: url(https://skribbl.io/res/background.png);
+  background-size: 256px;
+} 
+
+/*Limite-limac*/
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('../fonts/Cocogoose Pro.ttf');
+  font-weight: 500;
+}
+
+#limite-limac .item-row {
+  background: url('../img/particles.png'), linear-gradient(135deg, #E83178, #170F4A 80%);
+  background-attachment: fixed;
+
+/*  animation:  limiteLimacAnim 17s -0.773s linear infinite;*/
+}
+
+@keyframes limiteLimacAnim {
+    0% {
+        left: -2%;
+        background: #3B44D1;
+    }
+    100% {
+        background: #9337FE;
+    }
+}
+
+#limite-limac .item-title {
+  color: white;
+  font-family: 'Cocogoose';
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+/*limite-limite*/
+@font-face {
+  font-family: 'coolvetica';
+  src: url('../fonts/coolvetica rg.ttf');
+  font-weight: 500;
+}
+
+#limite-limite .item-title {
+  font-family: coolvetica, Montserrat, sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  letter-spacing:.1ch;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+#limite-limite .item-row {
+  background: #0F263F;
+} 
+
+/*pmu-race*/
+#pmu-race .item-title {
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+#pmu-race .item-row {
+  background: #00b93e;
+  background-image: url(https://omeyer973.github.io/PMU-race/img/texture.png), linear-gradient(#004c19, #00b93e);
+}
+
+/*curve-fever*/
+#curve-fever .item-title {
+  color: rgba(0, 0, 0, 0);
+  background-image: url('https://forum.curvefever.pro/uploads/default/original/2X/3/324d153940f1ad505e3e7b9e9bbf42afccaedda2.png');
+  background-size: auto 70%;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+}
+
+#curve-fever .item-row {
+  background-image: url('https://forum.curvefever.pro/uploads/default/original/2X/b/b355919a568cda85df7d9596089ed2d22913cd64.png');
+  background-color: #235772;
+} 
+
+/*diximac*/
+@font-face {
+  font-family: 'Berkshire Swash';
+  src: local('Berkshire Swash Regular'), local('BerkshireSwash-Regular'), url(https://fonts.gstatic.com/s/berkshireswash/v9/ptRRTi-cavZOGqCvnNJDl5m5XmN_qs4z.woff2) format('woff2');
+}
+
+#diximac .item-title {
+  font-family: 'Berkshire Swash', cursive;
+  color: white;
+  font-weight: 100;
+  font-size: 1.5em;
+  letter-spacing: .2ch;
+}
+
+#diximac .item-row {
+  background-color: #422159;
+} 

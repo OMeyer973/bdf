@@ -69,9 +69,8 @@ p, a {
   padding-top: 64px;
   padding-bottom: 32px;
   background-color: #e0e0e0;
-  /* waves */
-  background-image: url(img/waves.png);
-  background-size: 100%;
+  background-image: url(../img/waves.png);
+  background-size: 300px 500px;
 }
 
 .header p {
@@ -113,6 +112,23 @@ p, a {
 
 .icon:hover {
   background-color: var(--itemDescriptionColor);
+}
+
+.imac-icon {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border-radius: 100%;
+
+
+  box-shadow: 2px 2px 0.5px  rgba(0,0,0,0.6);  border: 2px solid white;
+  background-color: white;
+  background-image: url('../img/logoIMAC.png');
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translate(-31px, -25px) rotate(-10deg);
+/*transform: translate(45px, -20px) rotate(-15deg);*/
 }
 
 .item-title {

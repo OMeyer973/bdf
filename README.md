@@ -1,2 +1,2 @@
-# bdf
-Le bureau du fun, meilleur site pour organiser un apéro en ligne !
+# Bureau du Fun
+Le meilleur site pour organiser un apéro en ligne !

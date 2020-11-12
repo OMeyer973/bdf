@@ -1,4 +1,18 @@
-/*Limite_L'imac*/
+/*skribbl-io*/
+#skribbl-io .item-title {
+  background: url('https://skribbl.io/res/logo.gif');
+  background-size: auto 150%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  color:rgba(0, 0, 0, 0);
+}
+
+
+#skribbl-io .item-row {
+  background-image: url(https://skribbl.io/res/background.png);
+} 
+
+/*Limite-limac*/
 @font-face {
   font-family: 'Cocogoose';
   src: url('fonts/Cocogoose Pro.ttf');

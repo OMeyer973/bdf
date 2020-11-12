@@ -1,0 +1,17 @@
+/*Limite_L'imac*/
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('fonts/Cocogoose Pro.ttf');
+  font-weight: 500;
+}
+
+#limite-limac .item-row {
+  background: linear-gradient(135deg, #E83178, #170F4A 80%);
+}
+
+#limite-limac .item-title {
+  color: white;
+  font-family: 'Cocogoose';
+  font-weight: 100;
+  text-transform: uppercase;
+}

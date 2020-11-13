@@ -69,8 +69,8 @@ p, a {
   padding-top: 64px;
   padding-bottom: 32px;
   background-color: #e0e0e0;
-  background-image: url(../img/waves.png);
-  background-size: 300px 500px;
+  background-image: url(../img/waves.svg);
+  background-size: 30%;
 }
 
 .header p {

@@ -8,7 +8,6 @@
   --buttonTextColor: #ffffff;
   --itemRowColor: #aeaeae;
   --itemDescriptionColor: #e0e0e0;
-
 }
 
 body {
@@ -25,9 +24,10 @@ h1, h2 {
   line-height: 100%;
 }
 
-h1 {
-  font-size: 3em;
-  margin: 0;
+@font-face {
+  font-family: 'soloist';
+  src: url('../fonts/soloiststraight1.ttf');
+  font-weight: 500;
 }
 
 span {

@@ -43,15 +43,15 @@
   padding: 8px 4px 0px 4px;
   border-radius: 18px;
   transform: skewY(-13deg);
-  z-index: 1;
-  white-space:pre-wrap;
+  white-space:pre;
 }
 
 #sticker-text:before {
   position: absolute;
   color:var(--buttonColor);
-  background-image: url(../img/waves.svg);
-  background-size: 80px;
+  background-image: url(../img/4waves.png);
+  /*background-size: .15em .15em;*/
+  background-size: 20px 20px;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   content: 'bureau\A du fun';

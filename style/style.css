@@ -63,11 +63,15 @@ p, a {
   padding-top: 64px;
   padding-bottom: 32px;
   background-color: #e0e0e0;
-  background-image: url(../img/waves.svg);
+  background-image: linear-gradient(to top, #d299c2, #fef9d7);
   background-size: 30%;
 }
 
-.header p {
+#party-head {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  transform: translate( 120px, -280px) rotate(-13deg);
 }
 
 .list-item {

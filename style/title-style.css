@@ -32,7 +32,7 @@
 
 #sticker-text {
   display: table;
-  color: white;
+  color: var(--titleColor);
   font-family: 'Lemons';
   font-weight: 600;
   font-size: 4.45em;
@@ -54,18 +54,18 @@
   background-size: 80px;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  content: 'bureau du fun';
-  transform: translate(2.5%, 6%);
+  content: 'bureau\A du fun';
+  transform: translate(.1ch, .1ch);
 
 }
 
 #sticker-text:after {
   position: absolute;
   color: var(--titleColor);
-  content: 'bureau du fun';
+  content: 'bureau\A du fun';
   display: block;
   width: 100%;
-  transform:translate(0, -102%);
+  transform:translate(-.1ch, -100%);
 }
 
 #sticker-decoration {

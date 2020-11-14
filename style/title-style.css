@@ -5,6 +5,7 @@
 }
 
 #sticker {
+  font-size: 16px;
   display:flex;
   justify-content: center;
   background-color: white;

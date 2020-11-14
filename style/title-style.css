@@ -32,7 +32,7 @@
 
 #sticker-text {
   display: table;
-  color: var(--titleColor);
+  color: white;
   font-family: 'Lemons';
   font-weight: 600;
   font-size: 4.45em;

@@ -4,9 +4,35 @@
   font-weight: 500;
 }
 
-.title {
+#sticker {
+  display:flex;
+  justify-content: center;
+  background-color: white;
+  width: 14.5em;
+  height: 14.5em;
+  border-radius: 100%;
+  margin:auto;
+  border: 14px solid white;
+}
+
+#sticker:before {
+  content: '';
+  position: absolute;
+  width: 14.5em;
+  height: 14.5em;
+  border: 6px solid var(--titleColor);
+  border-radius: 100%;
+  text-align: center;
+  margin:auto;
+  vertical-align: middle;
+  display:flex;
+  justify-content: center;
+  transform: translateY(-6px);
+}
+
+#sticker-text {
   display: table;
-  color: #fff;
+  color: white;
   font-family: 'Lemons';
   font-weight: 600;
   font-size: 4.45em;
@@ -18,10 +44,11 @@
   border-radius: 18px;
   transform: skewY(-13deg);
   z-index: 1;
+  white-space:pre-wrap;
 }
 
-.title:before {
-  position:absolute;
+#sticker-text:before {
+  position: absolute;
   color:var(--buttonColor);
   background-image: url(../img/waves.svg);
   background-size: 80px;
@@ -29,10 +56,11 @@
   -webkit-background-clip: text;
   content: 'bureau du fun';
   transform: translate(2.5%, 6%);
+
 }
 
-.title:after {
-  position:absolute;
+#sticker-text:after {
+  position: absolute;
   color: var(--titleColor);
   content: 'bureau du fun';
   display: block;
@@ -40,7 +68,7 @@
   transform:translate(0, -102%);
 }
 
-.title-decoration {
+#sticker-decoration {
   position:absolute;
   background-color: var(--buttonColor); 
   height: 6px;
@@ -50,7 +78,7 @@
   transform: translate(3px, 164px) rotate(-13deg) skew(-13deg);
 }
 
-.title-decoration:before{
+#sticker-decoration:before{
   content: '';
   position: absolute;
   background-color: var(--buttonColor); 
@@ -60,7 +88,7 @@
   transform: translate(-80px, 6px) rotate(1.5deg) skew(1.5deg);
 }
 
-.title-decoration:after{
+#sticker-decoration:after{
   content: '';
   position: absolute;
   background-color: var(--buttonColor); 
@@ -68,30 +96,4 @@
   width: 280px;
   border-radius: 2px;
   transform: translate(-140px, -30px);
-}
-
-.title-holder {
-  display:flex;
-  justify-content: center;
-  background-color: white;
-  width: 14.5em;
-  height: 14.5em;
-  border-radius: 100%;
-  margin:auto;
-  border: 14px solid white;
-}
-
-.title-holder:before {
-  content:'';
-  position:absolute;
-  width: 14.5em;
-  height: 14.5em;
-  border: 6px solid var(--titleColor);
-  border-radius: 100%;
-  text-align: center;
-  margin:auto;
-  vertical-align: middle;
-  display:flex;
-  justify-content: center;
-  transform: translateY(-6px);
 }

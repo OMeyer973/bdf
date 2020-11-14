@@ -24,12 +24,6 @@ h1, h2 {
   line-height: 100%;
 }
 
-@font-face {
-  font-family: 'soloist';
-  src: url('../fonts/soloiststraight1.ttf');
-  font-weight: 500;
-}
-
 span {
   display: inline-block;
 }

@@ -1,17 +1,24 @@
+@font-face {
+  font-family: 'Lemons';
+  src: url('../fonts/Lemons-Regular.woff');
+  font-weight: 500;
+}
 
 .title {
   z-index: 1;
   color: #fff;
-  font-family: 'soloist';
+  font-family: 'Lemons';
   font-weight: 100;
-  font-size: 3.1em;
-  margin: auto;
-  margin-top: 60px;
+  font-size: 4.45em;
+  margin-top: 20%;
   font-stretch: condensed;
-  transform: skewY(-13deg) scale(.5, .5) translate(115px, -45px);
+  transform: skewY(-13deg);
   background-color: white;
   display: table;
-  border-radius: 20px;
+  border-radius: 18px;
+  line-height: .8em;
+  letter-spacing: .1ch;
+  padding: 8px 4px 0px 4px;
 }
 
 .title:before {
@@ -24,7 +31,7 @@
   content: 'bureau du fun';
   display: block;
   width: 100%;
-  transform: translate(-115px, 45px) scale(2, 2) translate(1.5%, 6%) scale(.93, 1);
+  transform: translate(2%, 6%);
 }
 
 .title:after {
@@ -33,7 +40,7 @@
   content: 'bureau du fun';
   display: block;
   width: 100%;
-  transform:translate(0, -102%) translate(-115px, 45px) scale(2, 2) scale(.93, 1);
+  transform:translate(0, -102%);
 }
 
 .title-decoration {
@@ -43,7 +50,7 @@
   width: 200px;
   border-radius: 6px;
   border: 4px solid white;
-  transform: translate(5px, 160px) rotate(-13deg) skew(-13deg);
+  transform: translate(3px, 164px) rotate(-13deg) skew(-13deg);
 }
 
 .title-decoration:before{
@@ -92,19 +99,4 @@
   justify-content: center;
   border: 6px solid var(--titleColor);
   transform: translateY(-6px);
-}
-
-.title-holder:after {
-  content:'';
-  position:absolute;
-  width: 14.5em;
-  height: 14.5em;
-  text-align: center;
-  margin:auto;
-  vertical-align: middle;
-  display:flex;
-  justify-content: center;
-  transform: translateY();
-  background-color: white;
-  transform: translateX(4px) skewY(-13deg) scale(.87, .3);
 }

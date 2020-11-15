@@ -33,7 +33,7 @@
 
 #sticker-text {
   display: table;
-  color: white;
+  color: var(--titleColor);
   font-family: 'Lemons';
   font-weight: 600;
   font-size: 4.45em;
@@ -57,7 +57,6 @@
   -webkit-background-clip: text;
   content: 'bureau\A du fun';
   transform: translate(.1ch, .1ch);
-
 }
 
 #sticker-text:after {
@@ -66,7 +65,7 @@
   content: 'bureau\A du fun';
   display: block;
   width: 100%;
-  transform:translate(-.1ch, -100%);
+  transform:translate(-4px, -100%);
 }
 
 #sticker-decoration {
@@ -79,7 +78,7 @@
   transform: translate(3px, 164px) rotate(-13deg) skew(-13deg);
 }
 
-#sticker-decoration:before{
+#sticker-decoration:before {
   content: '';
   position: absolute;
   background-color: var(--buttonColor); 
@@ -89,7 +88,7 @@
   transform: translate(-80px, 6px) rotate(1.5deg) skew(1.5deg);
 }
 
-#sticker-decoration:after{
+#sticker-decoration:after {
   content: '';
   position: absolute;
   background-color: var(--buttonColor); 

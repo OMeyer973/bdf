@@ -1,3 +1,4 @@
+// Render Text
 var stickerText = document.getElementById("sticker-text")
 document.getElementById("input-text").addEventListener("input", applyInput)
 
@@ -14,3 +15,13 @@ function applyInput() {
   customAfterStyle.innerHTML = "#sticker-text:after {content: '" + inputText.replace(/\r?\n/g, '\\A ') + "';"
 }
 
+
+// Take screenshots
+/*document.getElementById("screenshot-button").addEventListener("click", takeScreenshot)
+var sticker = document.getElementById("sticker")
+
+function takeScreenshot() {
+  html2canvas(sticker).then(canvas => {
+    document.body.appendChild(canvas)
+  });
+}*/

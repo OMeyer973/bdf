@@ -1,3 +1,38 @@
+/*garticphone*/
+
+@font-face {
+  font-family: 'nunito-black';
+  src: url('../fonts/Nunito-Black.ttf');
+  font-weight: 900;
+}
+
+#garticphone .item-title {
+  color: white;
+  font-family: 'nunito-black';
+  font-weight: 900;
+  font-size: 1.5em;
+  text-shadow:
+    rgb(42,1,81) 2pt 0pt 0pt,
+    rgb(42,1,81) 1.75517pt 0.958851pt 0pt,
+    rgb(42,1,81) 1.0806pt 1.68294pt 0pt,
+    rgb(42,1,81) 0.141474pt 1.99499pt 0pt,
+    rgb(42,1,81) -0.832294pt 1.81859pt 0pt,
+    rgb(42,1,81) -1.60229pt 1.19694pt 0pt,
+    rgb(42,1,81) -1.97998pt 0.28224pt 0pt,
+    rgb(42,1,81) -1.87291pt -0.701566pt 0pt,
+    rgb(42,1,81) -1.30729pt -1.5136pt 0pt,
+    rgb(42,1,81) -0.421592pt -1.95506pt 0pt,
+    rgb(42,1,81) 0.567324pt -1.91785pt 0pt,
+    rgb(42,1,81) 1.41734pt -1.41108pt 0pt,
+    rgb(42,1,81) 1.92034pt -0.558831pt 0pt;
+}
+
+#garticphone .item-row {
+  background-image: url(https://garticphone.com/images/textura.png), linear-gradient(200deg,rgba(92,30,166,1) 0%,rgba(200,67,94,1) 100%);
+  background-size: 100%;
+}
+
+
 /*skribbl-io*/
 #skribbl-io .item-title {
   background: url('https://skribbl.io/res/logo.gif');

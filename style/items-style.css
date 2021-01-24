@@ -32,7 +32,6 @@
   background-size: 100%;
 }
 
-
 /*skribbl-io*/
 #skribbl-io .item-title {
   background: url('https://skribbl.io/res/logo.gif');
@@ -201,6 +200,14 @@
 #bombparty .item-row {
   background-image: url(https://jklm.fun/images/world/miniBanner@2x.png);
   background-size: 100%;
+}
+
+#imac-du-sale .item-row {
+  background-image: url("https://i1.sndcdn.com/artworks-000356251473-10fo8t-t500x500.jpg");
+}
+
+#imac-du-sel .item-row {
+  background-image: linear-gradient(#000000a0, #00000050), url("https://i1.sndcdn.com/artworks-000532133985-cr9mf9-t500x500.jpg");
 }
 
 /*citat-imac*/

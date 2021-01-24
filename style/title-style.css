@@ -1,3 +1,7 @@
+:root {
+  --stickerTitleColor: #292E32;
+}
+
 @font-face {
   font-family: 'Lemons';
   src: url('../fonts/Lemons-Regular.woff');
@@ -24,7 +28,7 @@
   position: absolute;
   width: 14.5em;
   height: 14.5em;
-  border: 6px solid var(--titleColor);
+  border: 6px solid var(--stickerTitleColor);
   border-radius: 100%;
   text-align: center;
   margin:auto;
@@ -36,7 +40,7 @@
 
 #sticker-text {
   display: table;
-  color: var(--titleColor);
+  color: var(--stickerTitleColor);
   font-family: 'Lemons';
   font-weight: 600;
   font-size: 4.45em;
@@ -64,7 +68,7 @@
 
 #sticker-text:after {
   position: absolute;
-  color: var(--titleColor);
+  color: var(--stickerTitleColor);
   content: 'bureau\A du fun';
   display: block;
   width: 100%;

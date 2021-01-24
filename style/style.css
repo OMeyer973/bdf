@@ -1,20 +1,20 @@
-
 :root {
-  --titleColor: #292E32;
+  --titleColor: white;
   --titleFont: 'Poppins', sans-serif;
-  --textColor: #000;
+  --textColor: #ffffffbd;
+  --rowTextColor: white;
   --textFont: 'Didact Gothic', sans-serif;
   --buttonColor: #E5354C;
   --buttonTextColor: #ffffff;
-  --itemRowColor: #aeaeae;
-  --itemDescriptionColor: #e0e0e0;
+  --itemRowColor: #ffffff1c;
+  --itemDescriptionColor: #6845a333;
 }
 
 body {
   padding: 0;
   margin: 0;
   color: var(--textColor);
-  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 100%);
+  background-image: linear-gradient(to top, #3d1353 0%, #17263f 100%);
   background-attachment: fixed;
 }
 
@@ -78,20 +78,14 @@ p, a {
 /*  background-color: #e0e0e0;
   background-image: linear-gradient(to top, #d299c2, #fef9d7);*/
 /*  background-image: linear-gradient(to bottom right, #fa709a, #fee140);*/
-  background-image: linear-gradient(to bottom right, rgba(250, 112, 154, .7), rgba(254, 225, 64, .7));
+/*  background-image: linear-gradient(to bottom right, rgba(250, 112, 154, .7), rgba(254, 225, 64, .7));*/
 /*  background-size: 30%;*/
-}
-
-#party-head {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  transform: translate( 120px, -280px) rotate(-13deg);
 }
 
 .list-item {
   margin: 8px 0px;
   background-color: var(--itemDescriptionColor);
+  color: var(--rowTextColor);
   border-radius: 32px;
 }
 

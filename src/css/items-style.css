@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'nunito-black';
-  src: url('../fonts/Nunito-Black.ttf');
+  src: url('../font/Nunito-Black.ttf');
   font-weight: 900;
 }
 
@@ -49,7 +49,7 @@
 /*Limite-limac*/
 @font-face {
   font-family: 'Cocogoose';
-  src: url('../fonts/Cocogoose Pro.ttf');
+  src: url('../font/Cocogoose Pro.ttf');
   font-weight: 500;
 }
 
@@ -80,7 +80,7 @@
 /*limite-limite*/
 @font-face {
   font-family: 'coolvetica';
-  src: url('../fonts/coolvetica rg.ttf');
+  src: url('../font/coolvetica rg.ttf');
   font-weight: 500;
 }
 

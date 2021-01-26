@@ -18,6 +18,13 @@ body {
   background-attachment: fixed;
 }
 
+.background-image {
+  background-image: url('../vector/background.svg');
+  background-position: center top;
+  background-size: 6000px;
+  background-repeat: no-repeat;
+}
+
 h1, h2 {
   font-weight: 700;
   color: var(--titleColor);
@@ -75,7 +82,7 @@ p, a {
   text-align: center;
   padding-top: 64px;
   padding-bottom: 32px;
-/*  background-color: #e0e0e0;
+  /*  background-color: #e0e0e0;
   background-image: linear-gradient(to top, #d299c2, #fef9d7);*/
 /*  background-image: linear-gradient(to bottom right, #fa709a, #fee140);*/
 /*  background-image: linear-gradient(to bottom right, rgba(250, 112, 154, .7), rgba(254, 225, 64, .7));*/

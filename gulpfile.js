@@ -13,6 +13,7 @@ const ghPages = require('gulp-gh-pages');
 
 const htmlPath = 'src/**/*.html'
 const imgPath = 'src/img/*'
+const vectorPath = 'src/vector/*'
 const jsPath = 'src/js/**/*.js'
 const cssPath = 'src/css/**/*.css'
 const fontPath = 'src/font/*'
@@ -31,6 +32,12 @@ function imgTask() {
     return gulp.src(imgPath)
         .pipe(imagemin())
         .pipe(gulp.dest('dist/img'))
+        .pipe(browserSync.stream());
+}
+
+function vectorTask() {
+    return gulp.src(vectorPath)
+        .pipe(gulp.dest('dist/vector'))
         .pipe(browserSync.stream());
 }
 
@@ -60,11 +67,12 @@ function fontTask() {
         .pipe(browserSync.stream());
 }
 
-const buildTask = gulp.parallel(htmlTask, imgTask, jsTask, cssTask, fontTask);
+const buildTask = gulp.parallel(htmlTask, imgTask, vectorTask, jsTask, cssTask, fontTask);
 
 function watchTask() {
     gulp.watch(htmlPath, { interval: 500 }, htmlTask).on('change', browserSync.reload);
     gulp.watch(imgPath, { interval: 500 }, imgTask).on('change', browserSync.reload);
+    gulp.watch(vectorPath, { interval: 500 }, vectorTask).on('change', browserSync.reload);
     gulp.watch(jsPath, { interval: 500 }, jsTask).on('change', browserSync.reload);
     gulp.watch(cssPath, { interval: 500 }, cssTask).on('change', browserSync.reload);
     gulp.watch(fontPath, { interval: 500 }, fontTask).on('change', browserSync.reload);

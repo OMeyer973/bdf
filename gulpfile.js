@@ -3,10 +3,12 @@ const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const sourcemaps = require('gulp-sourcemaps');
-const rename = require("gulp-rename");
+const rename = require('gulp-rename');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const browserSync = require('browser-sync').create();
+const del = require('del');
 const ghPages = require('gulp-gh-pages');
 
 const htmlPath = 'src/**/*.html'
@@ -15,57 +17,76 @@ const jsPath = 'src/js/**/*.js'
 const cssPath = 'src/css/**/*.css'
 const fontPath = 'src/font/*'
 
-function html() {
+function htmlTask() {
     return gulp.src(htmlPath)
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.stream());
 }
 
-function img() {
+function imgTask() {
     return gulp.src(imgPath)
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/img'));
+        .pipe(gulp.dest('dist/img'))
+        .pipe(browserSync.stream());
 }
 
-function js() {
+function jsTask() {
     return gulp.src(jsPath)
     .pipe(sourcemaps.init())
     .pipe(rename({ suffix: '.min' }))
     .pipe(terser())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/js'))
+    .pipe(browserSync.stream());
 }
 
-function css() {
+function cssTask() {
     return gulp.src(cssPath)
       .pipe(sourcemaps.init())
       .pipe(concat('style.min.css'))
       .pipe(postcss([autoprefixer(), cssnano()])) //not all plugins work with postcss only the ones mentioned in their documentation
       .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('dist/css'));
+      .pipe(gulp.dest('dist/css'))
+      .pipe(browserSync.stream());
 }
 
-function font() {
+function fontTask() {
     return gulp.src(fontPath)
-        .pipe(gulp.dest('dist/font'));
+        .pipe(gulp.dest('dist/font'))
+        .pipe(browserSync.stream());
 }
 
-function watch() {
-    gulp.watch([htmlPath, imgPath, jsPath, cssPath, fontPath], { interval: 1000 },  gulp.parallel(html, img, js, css, font));
+const buildTask = gulp.parallel(htmlTask, imgTask, jsTask, cssTask, fontTask);
+
+function watchTask() {
+    gulp.watch(htmlPath, { interval: 500 }, htmlTask).on('change', browserSync.reload);
+    gulp.watch(imgPath, { interval: 500 }, imgTask).on('change', browserSync.reload);
+    gulp.watch(jsPath, { interval: 500 }, jsTask).on('change', browserSync.reload);
+    gulp.watch(cssPath, { interval: 500 }, cssTask).on('change', browserSync.reload);
+    gulp.watch(fontPath, { interval: 500 }, fontTask).on('change', browserSync.reload);
 }
 
-function deploy() {
-  return gulp.src("./dist/**/*")
-    .pipe(ghPages ({
-            remoteUrl: "https://github.com/OMeyer973/bureaudufun.git",
-            branch: "gh-pages"
+function browserSyncTask() {
+    browserSync.init({
+        server: {
+            baseDir: './dist'
         }
-    ));
+    });
+}
+
+function cleanTask() {
+    return del(['./dist/', './.publish']);
+}
+
+function ghPagesTask() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages ({
+        remoteUrl: 'https://github.com/OMeyer973/bureaudufun.git',
+        branch: 'gh-pages'
+    }));
 };
 
-exports.html = html;
-exports.img = img;
-exports.js = js;
-exports.css = css;
-exports.default = gulp.series( gulp.parallel(html, img, js, css, font), watch);
-
-exports.deploy = deploy;
+exports.build = buildTask;
+exports.watch = exports.default = gulp.series(buildTask, gulp.parallel(watchTask, browserSyncTask));
+exports.clean = cleanTask; 
+exports.deploy = gulp.series(buildTask, ghPagesTask);

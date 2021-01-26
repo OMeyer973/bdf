@@ -12,4 +12,4 @@ build + watch: `gulp` or `gulp watch`
 
 ## Deploy
 `gulp deploy`
-> build and pushes to gh-pages branch (production branch)
+> builds and pushes to gh-pages branch (production branch)

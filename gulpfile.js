@@ -1,3 +1,4 @@
+const del = require('del');
 const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
@@ -8,7 +9,6 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
-const del = require('del');
 const ghPages = require('gulp-gh-pages');
 
 const htmlPath = 'src/**/*.html'
@@ -16,6 +16,10 @@ const imgPath = 'src/img/*'
 const jsPath = 'src/js/**/*.js'
 const cssPath = 'src/css/**/*.css'
 const fontPath = 'src/font/*'
+
+function cleanTask() {
+    return del(['./dist/', './.publish']);
+}
 
 function htmlTask() {
     return gulp.src(htmlPath)
@@ -74,10 +78,6 @@ function browserSyncTask() {
     });
 }
 
-function cleanTask() {
-    return del(['./dist/', './.publish']);
-}
-
 function ghPagesTask() {
   return gulp.src('./dist/**/*')
     .pipe(ghPages ({
@@ -86,7 +86,7 @@ function ghPagesTask() {
     }));
 };
 
+exports.clean = cleanTask;
 exports.build = buildTask;
 exports.watch = exports.default = gulp.series(buildTask, gulp.parallel(watchTask, browserSyncTask));
-exports.clean = cleanTask; 
 exports.deploy = gulp.series(buildTask, ghPagesTask);

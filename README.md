@@ -3,13 +3,18 @@ Le meilleur site pour organiser un apéro en ligne !
 
 ---
 
-## Dev
-init project: `npm ci`
+A silly list of multiplayer online games
+Disclaimer: this website is highly over-engineered for learning purpose
 
-build + watch: `gulp` or `gulp watch`
-> build minifies js (adds .min suffix to all files)
-> build minifies & concat css in a single style.min.css file)
+## Usage
+- Install the dev environment using `npm ci`
+
+## Dev
+- Build + watch files during dev session with `npm start`
 
 ## Deploy
-`gulp deploy`
-> builds and pushes to gh-pages branch (production branch)
+- Build on local machine with `npm run build`
+- Build and publish to `"gh-pages"` live branch with `npm run deploy`
+
+## Utilities
+- "Something's wrong, I want to start a fresh build" `npm run clean` (delete last build folders)

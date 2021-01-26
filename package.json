@@ -4,7 +4,10 @@
   "description": "list of multiplayer online games to keep your sanity during lockdown",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "node_modules/.bin/gulp clean",
+    "build": "node_modules/.bin/gulp build",
+    "start": "node_modules/.bin/gulp watch",
+    "deploy": "node_modules/.bin/gulp deploy"
   },
   "repository": {
     "type": "git",

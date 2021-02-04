@@ -2,14 +2,22 @@ const del = require('del');
 const gulp = require('gulp');
 
 const imagemin = require('gulp-imagemin');
+
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
-const browserify = require('gulp-browserify');
+
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const util = require('gulp-util');
+
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+
 const browserSync = require('browser-sync').create();
 const ghPages = require('gulp-gh-pages');
 
@@ -17,6 +25,7 @@ const htmlPath = 'src/**/*.html'
 const imgPath = 'src/img/*'
 const vectorPath = 'src/vector/*'
 const jsPath = 'src/js/**/*.js'
+// const jsPath = 'src/js/index.js'
 const cssPath = 'src/css/**/*.css'
 const fontPath = 'src/font/*'
 
@@ -46,13 +55,34 @@ function vectorTask() {
 function jsTask() {
     return gulp.src(jsPath)
     .pipe(sourcemaps.init())
-    .pipe(browserify({ debug : true }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(terser())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 }
+
+// function jsTask() {
+//     var b = browserify({
+//       entries: jsPath,
+//       debug: true,
+//       transform: [babelify.configure({
+//         presets: ["@babel/preset-env"]
+//         // presets: ['es2015']
+//       })]
+//     });
+  
+//     return b.bundle()
+//       .pipe(source(jsPath))
+//       .pipe(buffer())
+//       .pipe(sourcemaps.init({ loadMaps: true }))
+//         // Add other gulp transformations (eg. uglify) to the pipeline here.
+//         .pipe(terser())
+//         .on('error', util.log)
+//       .pipe(sourcemaps.write('./'))
+//       .pipe(gulp.dest('dist/js'))
+//       .pipe(browserSync.stream());
+//   };
 
 function cssTask() {
     return gulp.src(cssPath)

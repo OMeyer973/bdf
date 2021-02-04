@@ -1,10 +1,12 @@
 const del = require('del');
 const gulp = require('gulp');
+
 const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
+const browserify = require('gulp-browserify');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -44,6 +46,7 @@ function vectorTask() {
 function jsTask() {
     return gulp.src(jsPath)
     .pipe(sourcemaps.init())
+    .pipe(browserify({ debug : true }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(terser())
     .pipe(sourcemaps.write('.'))

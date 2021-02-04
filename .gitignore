@@ -65,3 +65,4 @@ Thumbs.db
 # Specific to this project
 # -------------------------
 /dist
+.publish

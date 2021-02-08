@@ -6,7 +6,7 @@
   font-weight: 900;
 }
 
-#garticphone .item-title {
+#gartic-phone .item-title {
   color: white;
   font-family: 'nunito-black';
   font-weight: 900;
@@ -27,7 +27,7 @@
     rgb(42,1,81) 1.92034pt -0.558831pt 0pt;
 }
 
-#garticphone .item-row {
+#gartic-phone .item-row {
   background-image: url(https://garticphone.com/images/textura.png), linear-gradient(200deg,rgba(92,30,166,1) 0%,rgba(200,67,94,1) 100%);
   background-size: 100%;
 }
@@ -211,7 +211,7 @@
 }
 
 /*citat-imac*/
-#citat-imac .item-title {
+#citatimac .item-title {
   font-family: 'Poppins', sans-serif;
   color: white;
   font-weight: bold;
@@ -220,7 +220,7 @@
   font-size: 1.5em;
 }
 
-#citat-imac .item-row {
+#citatimac .item-row {
   background: linear-gradient(-225deg, #5753c9 0%, #93A1FF 100%);
 }
 

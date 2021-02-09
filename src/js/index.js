@@ -1,6 +1,7 @@
 import { app, text } from "hyperapp";
 import h from "hyperapp-jsx-pragma";
 import { state } from "./state.js";
+import produce from "immer";
 
 //@jsx h
 
@@ -14,6 +15,34 @@ const imacSvg = (
   </svg>
 );
 
+// ACTIONS
+// really long and broken immutable version
+// const ToggleItemDescription = (state, listId, itemId) => ({
+//   ...state,
+//   lists: [
+//     ...state.lists.filter(list => list.id != listId),
+//     ...state.lists.filter(list => list.id == listId).map(list => [
+//       ...list.items.filter(item => item.id != itemId),
+//       ...list.items.filter(item => item.id == itemId).map(item => ({
+//         ...item, 
+//         open: !item.open            
+//       }))
+//     ])
+//   ].concat(console.log(state))
+// })
+
+// mutable trick using immer's produce
+const ToggleItemDescription = (state, listId, itemId) =>
+  produce(state, draft => {
+    draft
+      .lists
+      .find(list => list.id === listId)
+      .items
+      .find(item => item.id === itemId)
+      .open ^= true; 
+  })
+
+// VIEWS
 // replace \n with <br/>
 const MakeBrs = str =>
   str
@@ -57,19 +86,19 @@ const Header = (props) => (
 );
 
 const ListSection = (props) => (
-  <section class="page-section" id={props.id}>
+  <section class="page-section" id={props.htmlid}>
     <div class="container list">
       <h2>{props.title}</h2>
       <p class="subtitle">{MakeSpanBlocks(props.subtitle)}</p>
-      {props.games.map(Item)}
+      {props.items.map(itemProps => Item(itemProps, props.id))}
     </div>
   </section>
 );
 
-const Item = (props) => (
+const Item = (props, parentId) => (
   <div class="list-item" id={MakeId(props.title)}>
     <div class="item-row">
-      <div class="icon show-item-description">
+    <div class={["icon", "show-item-description", props.open ? "upside-down" : ""]} onclick={state => ToggleItemDescription(state, parentId, props.id)}>
         <i class="fas fa-chevron-down"></i>
       </div>
       <h3 class="item-title">
@@ -77,13 +106,12 @@ const Item = (props) => (
       </h3>
       <a class="button" href={props.url} target="_blank">
         {[
-          // props.imac ? <svg class="imac-icon"><use xlinkHref="#imac-symbol" /></svg> : "",
           props.imac ? imacSvg : "",
           props.buttonText ? props.buttonText : "Jouer",
         ]}
       </a>
     </div>
-    <div class="item-description hidden">
+    <div class={["item-description", props.open ? "" : "hidden"]}>
       <p>{props.description}</p>
     </div>
   </div>

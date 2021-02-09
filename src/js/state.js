@@ -1,3 +1,5 @@
+import uniqid from "uniqid"; 
+
 const state = () => ({
   header: {
     title: "Bureau\ndu Fun",
@@ -9,8 +11,8 @@ const state = () => ({
     {
       title: "Jeux sur navigateur",
       subtitle: "pour jouer en ligne avec tes amis | sans prise de tête",
-      id: "browser-games",
-      games: [
+      htmlid: "browser-games",
+      items: [
         {
           title: "Gartic Phone",
           url: "https://garticphone.com/fr",
@@ -127,8 +129,8 @@ const state = () => ({
     {
       title: "Jeux sans matériel",
       subtitle: "Tu peux même y jouer au téléphone | si ça te chante",
-      id: "free-games",
-      games: [
+      htmlid: "free-games",
+      items: [
         {
           title: "C'est un film où...",
           description: "la la la",
@@ -138,8 +140,8 @@ const state = () => ({
     {
       title: "Jeux à télécharger",
       subtitle: "Pour les jours de grande déter",
-      id: "download-games",
-      games: [
+      htmlid: "download-games",
+      items: [
         {
           title: "Minecraft",
           url: "",
@@ -155,8 +157,8 @@ const state = () => ({
     {
       title: "Médiathèque",
       subtitle: "pour  tuer le temps | quand personne n'est en ligne",
-      id: "medias",
-      games: [
+      htmlid: "medias",
+      items: [
         {
           title: "IMAC du Sale",
           url: "https://soundcloud.com/kearox/imac-du-sale/s-Yi7Zd",
@@ -186,7 +188,14 @@ const state = () => ({
         },
       ],
     },
-  ],
+  ].map(list => ({ // add uids
+    ...list, 
+    id: uniqid(), 
+    items: list.items.map(item => ({
+      ...item, 
+      id: uniqid()
+    }))
+  }))
 });
 
 export { state };
